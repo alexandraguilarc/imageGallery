@@ -8,9 +8,24 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css"/></noscript>
   </head>
 
-  <body>
+  <body class="is-preload-0 is-preload-1 is-preload-2">
+    <!-- Main -->
+    <div id="main">
+    <%= render "shared/header" %>
+
     <%= yield %>
+
+    <%= render "shared/footer" %>
+
+    <!-- Scripts -->
+      <%= javascript_include_tag 'jquery.min'%>
+      <%= javascript_include_tag 'browser.min'%>
+      <%= javascript_include_tag 'breakpoints.min'%>
+      <%= javascript_include_tag 'main.js'%>
+      </div>
   </body>
 </html>
